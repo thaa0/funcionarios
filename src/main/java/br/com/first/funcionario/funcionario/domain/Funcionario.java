@@ -2,6 +2,8 @@ package br.com.first.funcionario.funcionario.domain;
 import java.util.UUID;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
@@ -14,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Funcionario {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID idFuncionario;
 	@NotBlank(message= "O campo nome não pode estar em branco")
 	private String nomeCompleto;
