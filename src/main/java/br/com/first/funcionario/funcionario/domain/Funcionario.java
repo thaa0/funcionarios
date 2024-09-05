@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import br.com.first.funcionario.funcionario.application.api.FuncionarioRequest;
 import lombok.AccessLevel;
@@ -23,7 +24,7 @@ public class Funcionario {
 	private String nomeCompleto;
 	@NotBlank
 	private String cargo;
-	@NotBlank
+	@NotNull
 	private Double salario;
 	@NotBlank
 	private String telefone;
