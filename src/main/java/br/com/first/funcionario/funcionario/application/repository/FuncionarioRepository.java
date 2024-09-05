@@ -10,4 +10,5 @@ public interface FuncionarioRepository {
 	List<Funcionario> buscaTodos();
 	void busca(UUID idFuncionario);
 	Funcionario buscaFuncionarioAtravesId(UUID idFuncionario);
+	void deletaAtravesId(UUID idFuncionario);
 }
