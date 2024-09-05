@@ -1,6 +1,7 @@
 package br.com.first.funcionario.funcionario.infra;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
@@ -29,5 +30,12 @@ public class FuncionarioInfraRepository implements FuncionarioRepository {
 		List<Funcionario> funcionarios = funcionarioSpringDataJPARepository.findAll();
 		log.info("[finaliza] FuncionarioIfraRepository - buscaTodos");
 		return funcionarios;
+	}
+
+	@Override
+	public void busca(UUID idFuncionario) {
+		log.info("[inicia] FuncionarioIfraRepository - buscaTodos");
+		funcionarioSpringDataJPARepository.findById(idFuncionario);
+		log.info("[finaliza] FuncionarioIfraRepository - buscaTodos");		
 	}
 }

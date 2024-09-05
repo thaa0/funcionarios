@@ -1,6 +1,9 @@
 package br.com.first.funcionario.funcionario.application.api;
 
 import java.util.List;
+import java.util.UUID;
+
+import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.RestController;
 import br.com.first.funcionario.funcionario.application.service.FuncionarioService;
@@ -27,5 +30,13 @@ public class FuncionarioController implements FuncionarioAPI {
 		List<FuncionarioListResponse> funcionarios = funcionarioService.buscaFuncionarios();
 		log.info("[finaliza] FuncionarioController - getFuncionarios");		
 		return funcionarios;
+	}
+
+	@Override
+	public void patchFuncionario(UUID idFuncionario, @Valid FuncionarioAlteraRequest funcionarioAlteracaoRequest) {
+		log.info("[inicia] FuncionarioController - getFuncionarios");
+		funcionarioService.buscaFuncionario(idFuncionario);
+		funcionarioService.alteraFuncionario(funcionarioAlteracaoRequest);
+		log.info("[finaliza] FuncionarioController - getFuncionarios");	
 	}
 }
