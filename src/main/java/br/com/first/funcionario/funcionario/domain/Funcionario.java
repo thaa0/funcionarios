@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
+import br.com.first.funcionario.funcionario.application.api.FuncionarioRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,12 +31,11 @@ public class Funcionario {
 	private String endereco;
 	
 	//Constructor
-	public Funcionario(@NotBlank String nomeCompleto, @NotBlank String profissao, @NotBlank Double salario, 
-			@NotBlank String telefone, @NotBlank String endereco) {
-		this.nomeCompleto = nomeCompleto;
-		this.profissao = profissao;
-		this.salario = salario;
-		this.telefone = telefone;
-		this.endereco = endereco;
+	public Funcionario(FuncionarioRequest funcionarioRequest) {
+		this.nomeCompleto = funcionarioRequest.getNomeCompleto();
+		this.profissao = funcionarioRequest.getProfissao();
+		this.salario = funcionarioRequest.getSalario();
+		this.telefone = funcionarioRequest.getTelefone();
+		this.endereco = funcionarioRequest.getEndereco();
 	}
 }
