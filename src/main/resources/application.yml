@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: funcionario
+    
+server:
+  servlet:
+    context-path: /gestao-funcionarios/api
