@@ -39,4 +39,5 @@ public class Funcionario {
 		this.telefone = funcionarioRequest.getTelefone();
 		this.endereco = funcionarioRequest.getEndereco();
 	}
+
 }

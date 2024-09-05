@@ -26,6 +26,10 @@ public interface FuncionarioAPI {
 	@ResponseStatus(code = HttpStatus.OK)
 	List<FuncionarioListResponse> getFuncionarios();
 	
+	@GetMapping(value="/{idFuncionario}")
+	@ResponseStatus(code = HttpStatus.OK)
+	FuncionarioResponse getFuncionario(@PathVariable UUID idFuncionario);
+	
 	@PatchMapping(value = "/{idFuncionario}")
 	@ResponseStatus(code = HttpStatus.OK)
 	void patchFuncionario(@PathVariable UUID idFuncionario, 
