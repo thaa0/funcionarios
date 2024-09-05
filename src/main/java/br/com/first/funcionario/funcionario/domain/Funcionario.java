@@ -18,7 +18,7 @@ public class Funcionario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID idFuncionario;
-	@NotBlank
+	@NotBlank(message="o campo nao pode estar em branco")
 	private String nomeCompleto;
 	@NotBlank
 	private String profissao;
@@ -30,7 +30,8 @@ public class Funcionario {
 	private String endereco;
 	
 	//Constructor
-	public Funcionario(String nomeCompleto, String profissao, Double salario, String telefone, String endereco) {
+	public Funcionario(@NotBlank String nomeCompleto, @NotBlank String profissao, @NotBlank Double salario, 
+			@NotBlank String telefone, @NotBlank String endereco) {
 		this.nomeCompleto = nomeCompleto;
 		this.profissao = profissao;
 		this.salario = salario;

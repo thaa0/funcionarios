@@ -7,7 +7,7 @@ import lombok.Value;
 
 @Value
 public class FuncionarioRequest {
-	@NotBlank
+	@NotBlank(message="o campo nao pode estar em branco")
 	private String nomeCompleto;
 	@NotBlank
 	private String profissao;
