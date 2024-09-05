@@ -1,5 +1,7 @@
 package br.com.first.funcionario.funcionario.application.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 import br.com.first.funcionario.funcionario.application.service.FuncionarioService;
 import lombok.RequiredArgsConstructor;
@@ -17,5 +19,13 @@ public class FuncionarioController implements FuncionarioAPI {
 		FuncionarioResponse funcionarioCadastrado = funcionarioService.cadastraFuncionario(funcionarioRequest);
 		log.info("[finaliza] FuncionarioController - postFuncionario");
 		return funcionarioCadastrado;
+	}
+
+	@Override
+	public List<FuncionarioListResponse> getFuncionarios() {
+		log.info("[inicia] FuncionarioController - getFuncionarios");
+		List<FuncionarioListResponse> funcionarios = funcionarioService.buscaFuncionarios();
+		log.info("[finaliza] FuncionarioController - getFuncionarios");		
+		return funcionarios;
 	}
 }
