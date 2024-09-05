@@ -6,9 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import br.com.first.funcionario.funcionario.application.api.FuncionarioAlteraRequest;
 import br.com.first.funcionario.funcionario.application.api.FuncionarioRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -42,4 +44,11 @@ public class Funcionario {
 		this.endereco = funcionarioRequest.getEndereco();
 	}
 
+	public void altera(@Valid FuncionarioAlteraRequest funcionarioAlteracaoRequest) {
+		this.nomeCompleto = funcionarioAlteracaoRequest.getNomeCompleto();
+		this.cargo = funcionarioAlteracaoRequest.getCargo();
+		this.salario = funcionarioAlteracaoRequest.getSalario();
+		this.telefone = funcionarioAlteracaoRequest.getTelefone();
+		this.endereco = funcionarioAlteracaoRequest.getEndereco();		
+	}
 }
