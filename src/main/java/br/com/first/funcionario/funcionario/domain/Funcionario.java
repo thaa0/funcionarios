@@ -18,23 +18,19 @@ public class Funcionario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID idFuncionario;
-	@NotBlank(message= "O campo nome não pode estar em branco")
+	@NotBlank
 	private String nomeCompleto;
-	@NotBlank(message= "O campo nome não pode estar em branco")
+	@NotBlank
 	private String profissao;
-	@NotBlank(message= "O campo salário não pode estar em branco")
+	@NotBlank
 	private Double salario;
-	@NotBlank(message= "O campo telefone não pode estar em branco")
+	@NotBlank
 	private String telefone;
-	@NotBlank(message= "O campo endereço não pode estar em branco")
+	@NotBlank
 	private String endereco;
 	
 	//Constructor
-	public Funcionario(@NotBlank(message = "O campo nome não pode estar em branco") String nomeCompleto,
-			@NotBlank(message = "O campo nome não pode estar em branco") String profissao,
-			@NotBlank(message = "O campo salário não pode estar em branco") Double salario,
-			@NotBlank(message = "O campo telefone não pode estar em branco") String telefone,
-			@NotBlank(message = "O campo endereço não pode estar em branco") String endereco) {
+	public Funcionario(String nomeCompleto, String profissao, Double salario, String telefone, String endereco) {
 		this.nomeCompleto = nomeCompleto;
 		this.profissao = profissao;
 		this.salario = salario;
