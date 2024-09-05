@@ -10,7 +10,7 @@ public class FuncionarioRequest {
 	@NotBlank(message="o campo nao pode estar em branco")
 	private String nomeCompleto;
 	@NotBlank
-	private String profissao;
+	private String cargo;
 	@NotNull
 	private Double salario;
 	@NotBlank

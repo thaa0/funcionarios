@@ -22,7 +22,7 @@ public class Funcionario {
 	@NotBlank(message="o campo nao pode estar em branco")
 	private String nomeCompleto;
 	@NotBlank
-	private String profissao;
+	private String cargo;
 	@NotBlank
 	private Double salario;
 	@NotBlank
@@ -33,7 +33,7 @@ public class Funcionario {
 	//Constructor
 	public Funcionario(FuncionarioRequest funcionarioRequest) {
 		this.nomeCompleto = funcionarioRequest.getNomeCompleto();
-		this.profissao = funcionarioRequest.getProfissao();
+		this.cargo = funcionarioRequest.getCargo();
 		this.salario = funcionarioRequest.getSalario();
 		this.telefone = funcionarioRequest.getTelefone();
 		this.endereco = funcionarioRequest.getEndereco();
