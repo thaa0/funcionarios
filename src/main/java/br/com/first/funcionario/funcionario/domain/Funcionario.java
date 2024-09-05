@@ -1,6 +1,7 @@
 package br.com.first.funcionario.funcionario.domain;
 import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +20,7 @@ import lombok.NoArgsConstructor;
 public class Funcionario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(columnDefinition = "uuid",name="id", updatable = false, unique = true,nullable = false)
 	private UUID idFuncionario;
 	@NotBlank(message="o campo nao pode estar em branco")
 	private String nomeCompleto;

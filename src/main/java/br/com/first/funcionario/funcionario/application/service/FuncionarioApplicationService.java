@@ -1,9 +1,11 @@
 package br.com.first.funcionario.funcionario.application.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.first.funcionario.funcionario.application.api.FuncionarioDetalhadoResponse;
 import br.com.first.funcionario.funcionario.application.api.FuncionarioListResponse;
 import br.com.first.funcionario.funcionario.application.api.FuncionarioRequest;
 import br.com.first.funcionario.funcionario.application.api.FuncionarioResponse;
@@ -36,4 +38,11 @@ public class FuncionarioApplicationService implements FuncionarioService {
 		return FuncionarioListResponse.converte(funcionarios);
 	}
 
+	@Override
+	public FuncionarioDetalhadoResponse buscaFuncionarioAtravesDoId(UUID idFuncionario) {
+		log.info("[inicia] FuncionarioApplicationService - buscaFuncionarioAtravesDoId");
+		Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
+		log.info("[Finaliza] FuncionarioApplicationService - buscaFuncionarioAtravesDoId");
+		return new FuncionarioDetalhadoResponse(funcionario);
+	}
 }

@@ -6,6 +6,7 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.RestController;
+
 import br.com.first.funcionario.funcionario.application.service.FuncionarioService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -33,11 +34,12 @@ public class FuncionarioController implements FuncionarioAPI {
 	}
 
 	@Override
-	public FuncionarioResponse getFuncionario(UUID idFuncionario) {
+	public FuncionarioDetalhadoResponse getFuncionario(UUID idFuncionario) {
 		log.info("[inicia] FuncionarioController - getFuncionario");
-		funcionarioService.buscaFuncionarioAtravesDoId(idFuncionario);
+		log.info("[idFuncionario] + {}", idFuncionario);
+		FuncionarioDetalhadoResponse funcionarioDetalhado = funcionarioService.buscaFuncionarioAtravesDoId(idFuncionario);
 		log.info("[finaliza] FuncionarioController - getFuncionario");	
-		return null;
+		return funcionarioDetalhado;
 	}
 	
 	@Override
