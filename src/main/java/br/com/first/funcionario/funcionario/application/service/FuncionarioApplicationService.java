@@ -55,8 +55,6 @@ public class FuncionarioApplicationService implements FuncionarioService {
 		Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
 		funcionario.altera(funcionarioAlteracaoRequest);
 		funcionarioRepository.salva(funcionario);
-		log.info("[inicia] FuncionarioApplicationService - alteraFuncionario");
-		log.info("[Finaliza] FuncionarioApplicationService - alteraFuncionario");
 		log.info("[Finaliza] FuncionarioApplicationService - alteraFuncionario");
 	}
 

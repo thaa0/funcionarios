@@ -43,7 +43,7 @@ public class Funcionario {
 		this.telefone = funcionarioRequest.getTelefone();
 		this.endereco = funcionarioRequest.getEndereco();
 	}
-
+	//constructor alteracao
 	public void altera(@Valid FuncionarioAlteraRequest funcionarioAlteracaoRequest) {
 		this.nomeCompleto = funcionarioAlteracaoRequest.getNomeCompleto();
 		this.cargo = funcionarioAlteracaoRequest.getCargo();
