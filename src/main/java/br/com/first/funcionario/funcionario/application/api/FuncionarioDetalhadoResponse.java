@@ -1,5 +1,6 @@
 package br.com.first.funcionario.funcionario.application.api;
 
+import br.com.first.funcionario.funcionario.domain.Endereco;
 import br.com.first.funcionario.funcionario.domain.Funcionario;
 import lombok.Value;
 
@@ -9,7 +10,7 @@ public class FuncionarioDetalhadoResponse {
 	private String cargo;
 	private Double salario;
 	private String telefone;
-	private String endereco;
+	private Endereco endereco;
 
 	//constructor
 	public FuncionarioDetalhadoResponse(Funcionario funcionario) {

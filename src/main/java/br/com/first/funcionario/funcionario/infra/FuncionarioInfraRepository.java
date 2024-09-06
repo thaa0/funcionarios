@@ -36,9 +36,9 @@ public class FuncionarioInfraRepository implements FuncionarioRepository {
 
 	@Override
 	public void busca(UUID idFuncionario) {
-		log.info("[inicia] FuncionarioIfraRepository - buscaTodos");
+		log.info("[inicia] FuncionarioIfraRepository - busca");
 		funcionarioSpringDataJPARepository.findById(idFuncionario);
-		log.info("[finaliza] FuncionarioIfraRepository - buscaTodos");		
+		log.info("[finaliza] FuncionarioIfraRepository - busca");		
 	}
 
 	@Override
@@ -53,6 +53,7 @@ public class FuncionarioInfraRepository implements FuncionarioRepository {
 	@Override
 	public void deletaAtravesId(UUID idFuncionario) {
 		log.info("[inicia] FuncionarioIfraRepository - deletaAtravesId");
+		funcionarioSpringDataJPARepository.deleteById(idFuncionario);
 		log.info("[finaliza] FuncionarioIfraRepository - deletaAtravesId");	
 	}
 }

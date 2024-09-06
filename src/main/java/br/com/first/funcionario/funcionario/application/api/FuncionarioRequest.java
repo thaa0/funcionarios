@@ -1,8 +1,10 @@
 package br.com.first.funcionario.funcionario.application.api;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import br.com.first.funcionario.funcionario.domain.Endereco;
 import lombok.Value;
 
 @Value
@@ -15,6 +17,6 @@ public class FuncionarioRequest {
 	private Double salario;
 	@NotBlank
 	private String telefone;
-	@NotBlank
-	private String endereco;
+	@Valid
+	private Endereco endereco;
 }

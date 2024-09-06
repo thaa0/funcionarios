@@ -3,6 +3,7 @@ package br.com.first.funcionario.funcionario.application.api;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import br.com.first.funcionario.funcionario.domain.Endereco;
 import br.com.first.funcionario.funcionario.domain.Funcionario;
 import lombok.Value;
 
@@ -13,7 +14,7 @@ public class FuncionarioListResponse {
 	private String cargo;
 	private Double salario;
 	private String telefone;
-	private String endereco;
+	private Endereco endereco;
 	
 	//converte lista de funcionarios em lista do tipo listResponse
 	public static List<FuncionarioListResponse> converte(List<Funcionario> funcionarios) {

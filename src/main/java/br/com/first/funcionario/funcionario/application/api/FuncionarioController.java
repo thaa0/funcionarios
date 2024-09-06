@@ -45,6 +45,7 @@ public class FuncionarioController implements FuncionarioAPI {
 	@Override
 	public void patchFuncionario(UUID idFuncionario, @Valid FuncionarioAlteraRequest funcionarioAlteracaoRequest) {
 		log.info("[inicia] FuncionarioController - getFuncionarios");
+		log.info("[idFuncionario] + {}", idFuncionario);
 		funcionarioService.alteraFuncionario(idFuncionario, funcionarioAlteracaoRequest);
 		log.info("[finaliza] FuncionarioController - getFuncionarios");	
 	}
@@ -52,6 +53,7 @@ public class FuncionarioController implements FuncionarioAPI {
 	@Override
 	public void deleteFuncionario(UUID idFuncionario) {
 		log.info("[inicia] FuncionarioController - deleteFuncionario");
+		log.info("[idFuncionario] + {}", idFuncionario);
 		funcionarioService.deletaAtravesDoId(idFuncionario);
 		log.info("[finaliza] FuncionarioController - deleteFuncionario");	
 	}
