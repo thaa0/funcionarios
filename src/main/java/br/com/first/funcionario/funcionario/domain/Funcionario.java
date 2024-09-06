@@ -2,6 +2,7 @@ package br.com.first.funcionario.funcionario.domain;
 import java.util.UUID;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,8 +33,9 @@ public class Funcionario {
 	private Double salario;
 	@NotBlank
 	private String telefone;
-	@NotBlank
-	private String endereco;
+	@NotNull
+	@Embedded
+	private Endereco endereco;
 	
 	//Constructor
 	public Funcionario(FuncionarioRequest funcionarioRequest) {
