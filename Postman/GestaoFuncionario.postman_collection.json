@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "57b33395-a2ea-47c5-bb3d-8a1504ce9d50",
+		"name": "GestaoFuncionario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36193286"
+	},
+	"item": [
+		{
+			"name": "cadastraFuncionario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeCompleto\": \"Maria Fernanda Carvalho Lima\",\r\n\t\"cargo\": \"Farmaceutica\",\r\n\t\"salario\": 30000,\r\n\t\"telefone\":\"73999156255\",\r\n\t\"endereco\": {\r\n    \"rua\": \"Rua das Flores\",\r\n    \"bairro\": \"Jardim Primavera\",\r\n    \"cidade\": \"São Paulo\",\r\n    \"estado\": \"SP\",\r\n    \"cep\": \"12345-678\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/gestao-funcionarios/api/v1/funcionario"
+			},
+			"response": []
+		},
+		{
+			"name": "listaFuncionarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/gestao-funcionarios/api/v1/funcionario"
+			},
+			"response": []
+		},
+		{
+			"name": "buscaFuncionarioPeloId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/gestao-funcionarios/api/v1/funcionario/875c425e-e157-45f6-a879-63443060353c"
+			},
+			"response": []
+		},
+		{
+			"name": "editaFuncionario",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeCompleto\": \"Maria Fernanda Carvalho Lima\",\r\n\t\"cargo\": \"Farmacêutica\",\r\n\t\"salario\": 30000,\r\n\t\"telefone\":\"73999156255\",\r\n\t\"endereco\": {\r\n    \"rua\": \"Rua das Flores\",\r\n    \"bairro\": \"Jardim Primavera\",\r\n    \"cidade\": \"São Paulo\",\r\n    \"estado\": \"SP\",\r\n    \"cep\": \"12345-678\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/gestao-funcionarios/api/v1/funcionario/875c425e-e157-45f6-a879-63443060353c"
+			},
+			"response": []
+		},
+		{
+			"name": "deletaFuncionario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/gestao-funcionarios/api/v1/funcionario/c700b1b9-2036-40e2-a811-670cb2594f5e"
+			},
+			"response": []
+		}
+	]
+}
