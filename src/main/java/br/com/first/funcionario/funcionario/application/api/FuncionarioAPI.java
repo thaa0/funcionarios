@@ -32,11 +32,11 @@ public interface FuncionarioAPI {
 	FuncionarioDetalhadoResponse getFuncionario(@PathVariable UUID idFuncionario);
 	
 	@PatchMapping(value = "/{idFuncionario}")
-	@ResponseStatus(code = HttpStatus.OK)
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void patchFuncionario(@PathVariable UUID idFuncionario, 
 			@Valid @RequestBody FuncionarioAlteraRequest funcionarioAlteracaoRequest);
 
 	@DeleteMapping(value="/{idFuncionario}")
-	@ResponseStatus(code = HttpStatus.OK)
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void deleteFuncionario(@PathVariable UUID idFuncionario);	
 }
